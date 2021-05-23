@@ -25,7 +25,7 @@ Responsive four card section
 ### Links
 
 - [Solution URL](https://www.frontendmentor.io/solutions/four-card-section-grid-flexbox-responsive-3LySr1LRe)
-- [ive Site URL](https://hk273.github.io/four-card-section/)
+- [Live Site URL](https://hk273.github.io/four-card-section/)
 
 
 ### Built with
