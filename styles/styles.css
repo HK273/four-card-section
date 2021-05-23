@@ -1,0 +1,267 @@
+/* ===============================================================================
+Styles for four section card:
+
+Centre Items: https://css-tricks.com/centering-in-css/
+Flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/#background
+Grid: https://thoughtbot.com/blog/positioning#grid
+Remove line break tags <br>: https://stackoverflow.com/questions/7596647/ignore-br-with-css
+
+=================================================================================== */
+
+
+/* Import styles */
+
+
+/* Poppins */
+
+
+/* 200 */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+/* 400 */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+/* 600 */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+/* Custom Properties  */
+
+:root {
+    /* Primary */
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    /* Neutral */
+    --vdblue: hsl(234, 12%, 34%);
+    --grayblue: hsl(229, 6%, 66%);
+    --lightgray: hsl(0, 0%, 98%);
+}
+
+
+/* Resets */
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--lightgray);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Heading section */
+
+.header {
+    /* Centre header */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    gap: 1ch;
+    margin-top: 5rem;
+}
+
+
+/* Main header text styles */
+
+.main-h {
+    font-family: 'Poppins', 'sans-serif';
+    font-weight: 200;
+    font-size: 3rem;
+    color: var(--vdblue);
+    /* allign text center */
+    text-align: center;
+}
+
+
+/* Bolder section */
+
+.main-h>span {
+    font-family: 'Poppins', 'sans-serif';
+    font-weight: 600;
+    /* Add line break  */
+    display: block;
+}
+
+
+/* header paragraph style */
+
+.main-p {
+    font-family: 'Poppins', 'sans-serif';
+    color: var(--grayblue);
+    font-weight: 200;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    /* allign text center */
+    text-align: center;
+}
+
+
+/* Grid / Container styles */
+
+.container {
+    margin: 30px;
+}
+
+.container>* {
+    box-shadow: 1px 8px 8px 0 rgba(216, 226, 237, 1), 0 6px 20px 0 rgba(216, 226, 237, 1);
+    border-radius: 0.5rem;
+    /* space content in container */
+    padding: 3rem 3rem;
+}
+
+.container {
+    display: grid;
+    grid-gap: 3rem;
+    /* Allows for more responsiveness */
+    grid-template-columns: repeat(auto-fit, minmax(34.4rem, 1fr));
+    grid-auto-flow: dense;
+    /* grid-template-columns: 34.6rem 34.6rem 34.6rem; */
+    justify-content: center;
+    margin: 5rem 10rem;
+}
+
+
+/* Set height for cards */
+
+.item {
+    height: 24.6rem;
+}
+
+.item>img {
+    display: flex;
+    margin: 5% 75%;
+}
+
+
+/* Set styles for card content */
+
+.item>h1 {
+    font-family: 'Poppins', 'sans-serif';
+    color: var(--vdblue);
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.item>p {
+    font-family: 'Poppins', 'sans-serif';
+    color: var(--grayblue);
+    font-weight: 200;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+
+/* Little zoom affect on card hover */
+
+.item:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: transform .2s;
+    transform: scale(1.02);
+}
+
+
+/* Postion items to match layout */
+
+.item1 {
+    position: relative;
+    border-top: 0.6rem solid var(--cyan);
+    top: 50%;
+}
+
+.item2 {
+    border-top: 0.6rem solid var(--red);
+}
+
+.item3 {
+    border-top: 0.6rem solid var(--blue);
+    position: relative;
+    top: 50%;
+}
+
+
+/* Set card 'Karma' postion  */
+
+.item4 {
+    border-top: 0.6rem solid var(--orange);
+    grid-column-start: 2;
+}
+
+
+/* Responsive */
+
+
+/* Remove set postioning at breakpoints */
+
+@media (max-width: 1290px) {
+    .item1 {
+        position: relative;
+        top: 0;
+    }
+    .item3 {
+        position: relative;
+        top: 0;
+    }
+    /* Change item order so calculator card appears at the bottom */
+    .item3 {
+        order: 1;
+    }
+    .item4 {
+        grid-column-start: 1;
+    }
+}
+
+
+/* Grid to two equal columns / rows */
+
+@media (max-width: 1000px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* collapse to one column */
+
+@media (max-width: 900px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    /* add spaccing between cards */
+    .container>div {
+        margin: 1rem 0;
+    }
+}
+
+
+/* Smaller devices between 375 - 320 */
+
+@media (max-width: 414px) {
+    .container {
+        margin: 2rem;
+    }
+    .header {
+        margin: 2rem;
+    }
+    /* Remove line break */
+    br {
+        display: none;
+    }
+}
