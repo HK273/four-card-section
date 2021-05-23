@@ -24,8 +24,8 @@ Responsive four card section
 
 ### Links
 
-- Solution URL: [Add solution URL here]()
-- Live Site URL: [Add live site URL here](https://hk273.github.io/four-card-section/)
+- Solution URL:()
+- Live Site URL:(https://hk273.github.io/four-card-section/)
 
 
 ### Built with
