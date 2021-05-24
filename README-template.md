@@ -45,7 +45,7 @@ Responsive four card section
 
 
 ```css
-/* Little zoom affect on card hover */
+/* Little zoom effect on card hover */
 
 .item:hover {
     cursor: pointer;
